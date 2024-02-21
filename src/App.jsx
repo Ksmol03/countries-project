@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import CountryTile from './components/TileCountry';
+
 
 const App = () => {
     const[data, setData] = useState([]);
@@ -70,21 +72,7 @@ const App = () => {
                 }
             } 
         })
-        .map(country => {
-            const languages =  typeof country.languages == 'object' ?  Object.getOwnPropertyNames(country.languages).map(prop => country.languages[prop]).slice(0, 3).join(', '): '';
-
-            return (
-            <div key={country.name.common} className='country-tile'>
-                <div className="flag">{country.flag}</div>
-                <p className="countryName">{country.name.common}</p>
-                <p className="country-data"></p>
-                <p className="country-data"><b>Capital:</b> {country.capital}</p>
-                <p className="country-data"><b>Languages:</b> {languages}</p>
-                <p className="country-data"><b>Population:</b> {country.population}</p>
-                <p className="country-data"><b>Region:</b> {country.region}</p>
-            </div>
-            )
-        })}
+        .map(country => <CountryTile key={country.cca2} country={country} />)}
         </div>
     </div>
   )

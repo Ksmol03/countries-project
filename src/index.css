@@ -36,6 +36,7 @@ h1 {
     margin: auto;
     text-align: center;
     font-size: 12rem;
+    user-select: none;
 }
 
 .countryName {
@@ -78,7 +79,7 @@ h1 {
     align-items: center;
 }
 
-.sort-options:hover {
+.sort-option:hover {
     cursor: pointer;
     user-select: none;
 }
