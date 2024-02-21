@@ -20,11 +20,10 @@ h1 {
     font-size: 2.5rem;
 }
 
-.flag-container {
+.countries-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .country-tile {
