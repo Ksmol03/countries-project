@@ -51,3 +51,38 @@ h1 {
     color: #444444;
     font-size: 1.2rem;
 }
+
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#searchBar {
+    padding: 1rem;
+    border-radius: 3rem;
+    outline: none;
+    border: solid 3px black;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sort-options {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    align-items: center;
+}
+
+.sort-options:hover {
+    cursor: pointer;
+    user-select: none;
+}
+
+.activeSort {
+    color: orange;
+}

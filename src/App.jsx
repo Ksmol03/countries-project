@@ -22,11 +22,11 @@ const App = () => {
     <div className='container'>
         <h1>Countries</h1>
         <div className="search">
-            <input type="search" name="search" id="search" value={search} onChange={handleSearch}/>
-            <div>
+            <input type="search" name="searchBar" id="searchBar" value={search} onChange={handleSearch} placeholder='Search...'/>
+            <div className='sort-options'>
                 <p>Sort By:</p>
-                <p className="alphabetic" onClick={() => sortType == 'alphabetic' ? setSortType('alphabeticReverse') :setSortType('alphabetic') }>Alphabetic</p>
-                <p className="population" onClick={() => sortType == 'population' ? setSortType('populationReverse') :setSortType('population') }>Population</p>
+                <p className={`sort-option ${sortType == 'alphabetic' || sortType == 'alphabeticReverse' ? 'activeSort' : ''}`} onClick={() => sortType == 'alphabetic' ? setSortType('alphabeticReverse') : setSortType('alphabetic') }>Alphabetic {sortType != 'alphabeticReverse'? '➡️' : '⬅️'}</p>
+                <p className={`sort-option ${sortType == 'population' || sortType == 'populationReverse' ? 'activeSort' : ''}`} onClick={() => sortType == 'population' ? setSortType('populationReverse') : setSortType('population') }>Population {sortType != 'populationReverse'? '⬇️' : '⬆️'}</p>
             </div>
         </div>
         <div className='countries-container'>
