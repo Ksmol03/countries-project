@@ -10,17 +10,28 @@ const App = () => {
             .then(data => setData(data))
             .catch(error => console.log(error));
     }, []);
-
     console.log(data);
 
   return (
-    <div>
-        Countries:
-        <ul>
-            {data.map((country, i) => (
-                <li key={i}>{country.name.common}: <p style={{fontSize: '4rem', margin: '0'}}>{country.flag}</p></li>
-            ))}
-        </ul>
+    <div className='container'>
+        <h1>Countries</h1>
+        <div className='flag-container'>
+        {data.map(country => {
+            const languages =  typeof country.languages == 'object' ?  Object.getOwnPropertyNames(country.languages).map(prop => country.languages[prop]).slice(0, 3).join(', '): '';
+
+            return (
+            <div key={country.name.common} className='country-tile'>
+                <div className="flag">{country.flag}</div>
+                <p className="countryName">{country.name.common}</p>
+                <p className="country-data"></p>
+                <p className="country-data"><b>Capital:</b> {country.capital}</p>
+                <p className="country-data"><b>Languages:</b> {languages}</p>
+                <p className="country-data"><b>Population:</b> {country.population}</p>
+                <p className="country-data"><b>Region:</b> {country.region}</p>
+            </div>
+            )
+        })}
+        </div>
     </div>
   )
 }
