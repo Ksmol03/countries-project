@@ -70,8 +70,12 @@ const App = () => {
             <input type="search" name="searchBar" id="searchBar" value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search...'/>
             <div className='sort-options'>
                 <p>Sort By:</p>
-                <p className={`sort-option ${sortType == 'alphabetic' || sortType == 'alphabeticReverse' ? 'activeSort' : ''}`} onClick={() => sortType == 'alphabetic' ? setSortType('alphabeticReverse') : setSortType('alphabetic') }>Alphabetic {sortType != 'alphabeticReverse'? '➡️' : '⬅️'}</p>
-                <p className={`sort-option ${sortType == 'population' || sortType == 'populationReverse' ? 'activeSort' : ''}`} onClick={() => sortType == 'population' ? setSortType('populationReverse') : setSortType('population') }>Population {sortType != 'populationReverse'? '⬇️' : '⬆️'}</p>
+                <p className={`sort-option ${sortType == 'alphabetic' || sortType == 'alphabeticReverse' ? 'activeSort' : ''}`} onClick={() => sortType == 'alphabetic' ? setSortType('alphabeticReverse') : setSortType('alphabetic') }>
+                    Alphabetic {sortType == 'alphabeticReverse' ? '⬅️' : '➡️'}
+                </p>
+                <p className={`sort-option ${sortType == 'population' || sortType == 'populationReverse' ? 'activeSort' : ''}`} onClick={() => sortType == 'population' ? setSortType('populationReverse') : setSortType('population') }>
+                    Population {sortType == 'populationReverse' ? '⬆️' : '⬇️'}
+                </p>
             </div>
         </div>
         <div className='countries-container'>
