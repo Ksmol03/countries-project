@@ -7,7 +7,7 @@ const CountryTile = ({ country }) => {
   return (
   <div className='country-tile'>
       <div className="flag">{country.flag}</div>
-      <p className="countryName">{country.name.common}</p>
+      <p className="countryName">{country.name}</p>
       <p className="country-data"></p>
       <p className="country-data"><b>Capital:</b> {country.capital}</p>
       <p className="country-data"><b>Languages:</b> {languagesArrayToString(country.languages)}</p>
